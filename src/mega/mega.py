@@ -743,6 +743,7 @@ class Mega:
                 raise ValueError('Mismatched mac')
             output_path = Path(dest_path + file_name)
             shutil.move(temp_output_file.name, output_path)
+            temp_output_file.close()
             return output_path
 
     def upload(self, filename, dest=None, dest_filename=None):
